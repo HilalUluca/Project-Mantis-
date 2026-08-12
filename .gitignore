@@ -1,0 +1,10 @@
+# Python sanal ortam klasörü
+venv/
+__pycache__/
+*.pyc
+
+# Ortam değişkenleri ve hassas veriler
+.env
+
+# IDE ayarları
+.vscode/

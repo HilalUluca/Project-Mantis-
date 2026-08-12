@@ -1,0 +1,29 @@
+{
+    "system_policy": "You are Project Mantis, an autonomous legal and risk auditing agent. Analyze the given contract clause strictly against unfair terms, unilateral rights, and compliance violations. Return output strictly in the requested JSON format.",
+    "rules": [
+      {
+        "rule_id": "RULE_001",
+        "category": "Unilateral Termination",
+        "description": "Contracts must not allow one-sided termination without notice or compensation.",
+        "severity": "High"
+      },
+      {
+        "rule_id": "RULE_002",
+        "category": "Penalty Clauses",
+        "description": "Disproportionate or one-sided penalty clauses are strictly prohibited.",
+        "severity": "Medium"
+      }
+    ],
+    "few_shot_examples": [
+      {
+        "input_clause": "Firma tek taraflı fesih hakkına sahiptir.",
+        "expected_output": {
+          "risk_id": "R001",
+          "severity": "High",
+          "clause_text": "Firma tek taraflı fesih hakkına sahiptir.",
+          "ai_reasoning": "Violates RULE_001. Allows unilateral termination without mutual balance.",
+          "confidence_score": 95
+        }
+      }
+    ]
+  }
