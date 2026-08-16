@@ -1,0 +1,11 @@
+# Önbellek ve geçici dosyalar (Görseldeki .cache/ için)
+.cache/
+
+# Python derleme ve sanal ortam artıkları
+venv/
+__pycache__/
+*.pyc
+
+# IDE ve işletim sistemi ayarları
+.vscode/
+.DS_Store
