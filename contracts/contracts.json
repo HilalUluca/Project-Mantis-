@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ProjectMantisSharedContracts",
+    "description": "Frontend ve Backend tracklerinin ortak veri sözleşmesi",
+    "definitions": {
+      
+      "RiskFinding": {
+        "type": "object",
+        "required": ["id", "documentId", "category", "severity", "title", "description", "status", "detectedAt"],
+        "properties": {
+          "id": { "type": "string", "description": "Benzersiz bulgu kimliği", "example": "RF-8841" },
+          "documentId": { "type": "string", "description": "İlgili dokümanın ID'si", "example": "VX-992" },
+          "category": { 
+            "type": "string", 
+            "enum": ["contract", "financial", "dependency", "workplace"], 
+            "description": "Bulgu kategorisi (Faz 2 uyumlu)", 
+            "example": "contract" 
+          },
+          "severity": { 
+            "type": "string", 
+            "enum": ["High", "Medium", "Low", "Critical"], 
+            "description": "Risk seviyesi", 
+            "example": "High" 
+          },
+          "title": { "type": "string", "description": "Bulgu başlığı", "example": "Kritik Tazminat Sınırı Aşımı" },
+          "description": { "type": "string", "description": "Detaylı yapay zeka analizi açıklaması", "example": "Madde 4.2 kapsamında sınırsız sorumluluk riski tespit edildi." },
+          "status": { "type": "string", "enum": ["Open", "In Review", "Resolved"], "description": "Bulgu durumu", "example": "Open" },
+          "detectedAt": { "type": "string", "format": "date-time", "description": "Tespit edilme zamanı", "example": "2026-08-18T08:14:22Z" }
+        }
+      },
+  
+      "Document": {
+        "type": "object",
+        "required": ["id", "title", "type", "path", "processedAt", "status"],
+        "properties": {
+          "id": { "type": "string", "description": "Doküman ID'si", "example": "VX-992" },
+          "title": { "type": "string", "description": "Doküman adı / Karşı taraf", "example": "Globex Corp - Master Svcs" },
+          "type": { "type": "string", "description": "Sözleşme / Dosya tipi", "example": "MSA AGREEMENT" },
+          "path": { "type": "string", "description": "Dosya veya dizin yolu", "example": "C:/Kurumsal/Sozlesmeler/2024/globex.pdf" },
+          "processedAt": { "type": "string", "description": "İşlenme zamanı metni", "example": "2h ago" },
+          "status": { 
+            "type": "string", 
+            "enum": ["Verified", "Pending", "Anomaly", "Analyzing"], 
+            "description": "Doküman denetim durumu", 
+            "example": "Anomaly" 
+          }
+        }
+      },
+  
+      "TeamEvent": {
+        "type": "object",
+        "required": ["id", "employeeName", "department", "eventType", "timestamp"],
+        "properties": {
+          "id": { "type": "string", "description": "Olay ID'si", "example": "TE-301" },
+          "employeeName": { "type": "string", "description": "İlgili personel adı", "example": "Ahmet Yılmaz" },
+          "department": { "type": "string", "description": "Departman", "example": "Yazılım Mühendisliği" },
+          "eventType": { "type": "string", "description": "Olay türü (Örn: Puantaj Uyuşmazlığı, İzin, Ayrılış)", "example": "Puantaj Eksikliği" },
+          "timestamp": { "type": "string", "format": "date-time", "description": "Olay zamanı", "example": "2026-08-18T09:00:00Z" }
+        }
+      },
+  
+      "AuditLogEntry": {
+        "type": "object",
+        "required": ["id", "level", "message", "timestamp", "sourceModule"],
+        "properties": {
+          "id": { "type": "string", "description": "Log ID'si", "example": "LOG-109" },
+          "level": { "type": "string", "enum": ["SYS", "AI", "WARN", "ERROR"], "description": "Log seviyesi", "example": "SYS" },
+          "message": { "type": "string", "description": "Log mesajı", "example": "Batch analysis of 450 MSA documents concluded." },
+          "timestamp": { "type": "string", "description": "Zaman damgası", "example": "08:14:22 UTC" },
+          "sourceModule": { "type": "string", "description": "Hangi modülden tetiklendiği", "example": "AuditEngine" }
+        }
+      }
+  
+    }
+  }
