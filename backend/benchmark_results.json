@@ -1,0 +1,38 @@
+[ 
+    {
+        "model": "phi4",
+        "contract_id": "TC_001",
+        "latency": 129.6313443183899,
+        "output": "```json\n{\n  \"contract_id\": \"TC_001\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\n    \"Tek taraflı ve derhal fesih hakkı, şirketin sözleşmeyi istediği zaman sonlandırmasına izin vererek sözleşmenin güvenilirliğini azaltır.\",\n    \"Hiçbir ihbar süresi veya gerekçe gerekliliği olmadan fesih hakkı, diğer tarafın önemli planlamalar yaparken ani değişikliklere uyum sağlamasını zorlaştırabilir ve potansiyel mali kayıplara yol açabilir.\"\n  ]\n}\n```"
+    },
+    {
+        "model": "phi4",
+        "contract_id": "TC_002",
+        "latency": 140.42963457107544,
+        "output": "```json\n{\n  \"contract_id\": \"TC_002\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\n    \"Cezai şartların yasal uyumluluğu: Cezai şartlar, özellikle belirli bir miktarın tahsil edilmesi için mahkeme kararına gerek olmadan uygulanabilirse, bazı hukuki sistemlerde geçersiz veya sınırlı olabilir. Bu tür maddelerin yasalara uygunluğunu kontrol etmek önemlidir.\",\n    \"Cezai miktarın orantılılığı: Cezai miktarın 50.000 USD gibi belirli bir tutarının, sözleşmenin ihlali nedeniyle şirkete oluşabilecek zarara orantılı olup olmadığı değerlendirilmelidir. Aşırı veya makul olmayan cezai miktarlar yasal olarak sorgulanabilir.\"\n  ]\n}\n```"
+    },
+    {
+        "model": "phi4",
+        "contract_id": "TC_003",
+        "latency": 115.25129628181458,
+        "output": "```json\n{\n  \"contract_id\": \"TC_003\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\n    \"Çalışanın kişisel ve mali kaynaklarının yetersiz olması durumunda, üçüncü taraf zararlarından veya gizlilik ihlallerinden dolayı tazminat ödeme yeteneği düşük olabilir.\",\n    \"Sözleşme metni, çalışanın sorumluluğunu aşırı derecede genişletiyor ve bu durum, çalışanın iş yükünü ve riskini önemli ölçüde artırarak moral ve performans üzerinde olumsuz etkiler yaratabilir.\"\n  ]\n}\n```"
+    },
+    {
+        "model": "qwen2.5",
+        "contract_id": "TC_001",
+        "latency": 52.09929084777832,
+        "output": "{\n  \"contract_id\": \"TC_001\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\"şirketin sözleşmeyi herhangi bir ihbar süresi olmadan ve gerekçe gösterilmeksizin feshedebilmesi riski\"]\n}"
+    },
+    {
+        "model": "qwen2.5",
+        "contract_id": "TC_002",
+        "latency": 20.715890169143677,
+        "output": "{\n  \"contract_id\": \"TC_002\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\"Ceza miktari çok yüksek\"]\n}"
+    },
+    {
+        "model": "qwen2.5",
+        "contract_id": "TC_003",
+        "latency": 28.553086519241333,
+        "output": "{\n  \"contract_id\": \"TC_003\",\n  \"risk_score\": \"Yüksek\",\n  \"identified_risks\": [\"Sorumluluk sınırlarının belirsizliği\", \"Gizlilik ihlallerine karşı koruma eksikliği\"]\n}"
+    }
+]

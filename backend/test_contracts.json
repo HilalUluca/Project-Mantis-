@@ -1,0 +1,17 @@
+[
+    {
+      "id": "TC_001",
+      "description": "Unilateral Termination Trap",
+      "text": "İşbu sözleşme herhangi bir ihbar süresi tanınmaksızın ve hiçbir gerekçe gösterilmeksizin şirket tarafından tek taraflı olarak derhal feshedilebilir."
+    },
+    {
+      "id": "TC_002",
+      "description": "Disproportionate Penalty Clause",
+      "text": "Çalışanın işbu sözleşme maddelerinden herhangi birine uymaması durumunda, şirket hiçbir mahkeme kararına gerek olmaksızın 50.000 USD cezai şart tahsil etme hakkına sahiptir."
+    },
+    {
+      "id": "TC_003",
+      "description": "Unilateral Liability & Indemnity",
+      "text": "Taraflardan bağımsız olarak, doğabilecek her türlü üçüncü taraf zararlarından ve gizlilik ihlallerinden yalnızca çalışan şahsen ve tüm mal varlığıyla sorumludur."
+    }
+  ]
