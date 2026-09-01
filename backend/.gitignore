@@ -9,3 +9,8 @@ __pycache__/
 # IDE ve işletim sistemi ayarları
 .vscode/
 .DS_Store
+.env
+mantis.db
+mantis_vault.db
+__pycache__/
+token.json

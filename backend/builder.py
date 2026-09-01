@@ -5,13 +5,13 @@ import autogen
 from typing import Dict, Any
 
 class Builder:
-    def __init__(self, model_name: str = "qwen2.5") -> None:
-        self.model_name = model_name
+    def __init__(self, model_name: str = None) -> None:
+        self.model_name = model_name or os.getenv("FOUNDRY_LOCAL_MODEL", "Phi-3.5-mini-instruct")
         self.llm_config: Dict[str, Any] = {
             "config_list": [{
                 "model": self.model_name,
-                "base_url": "http://localhost:11434/v1",
-                "api_key": "not-needed"
+                "base_url": os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://127.0.0.1:5272/v1"),
+                "api_key": os.getenv("FOUNDRY_API_KEY", "foundry-local-key")
             }]
         }
 

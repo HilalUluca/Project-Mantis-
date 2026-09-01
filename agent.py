@@ -5,9 +5,9 @@ import os
 
 class ContractAgent:
     def __init__(self):
-        self.model_name = "phi4"
+        self.model_name = os.getenv("FOUNDRY_LOCAL_MODEL", "Phi-3.5-mini-instruct")
         self.llm_config = {
-            "config_list": [{"model": self.model_name, "base_url": "http://localhost:11434/v1", "api_key": "not-needed"}]
+            "config_list": [{"model": self.model_name, "base_url": os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://127.0.0.1:5272/v1"), "api_key": os.getenv("FOUNDRY_API_KEY", "foundry-local-key")}]
         }
 
         # Kurumsal Beyin dosyasını yükle (Corporate Brain)
@@ -54,6 +54,18 @@ class ContractAgent:
         rules = json.dumps(self.brain.get("rules", []), ensure_ascii=False, indent=2)
         examples = json.dumps(self.brain.get("few_shot_examples", []), ensure_ascii=False, indent=2)
 
+        example_json = """
+        [
+            {
+                "risk_id": "string",
+                "severity": "string (High, Medium, Low)",
+                "clause_text": "string",
+                "ai_reasoning": "string",
+                "confidence_score": 100
+            }
+        ]
+        """.strip()
+
         return f"""
         {policy}
 
@@ -65,15 +77,7 @@ class ContractAgent:
 
         ÇIKTI FORMATI:
         Yanıtın SADECE geçerli bir JSON formatında olmalıdır. Herhangi bir giriş, açıklama cümlesi veya Markdown metin KULLANMA. Doğrudan liste ile başla:
-        [
-            {
-                "risk_id": "string",
-                "severity": "string (High, Medium, Low)",
-                "clause_text": "string",
-                "ai_reasoning": "string",
-                "confidence_score": 100
-            }
-        ]
+        {example_json}
         """
 
     def _parse_findings(self, content: str) -> list:

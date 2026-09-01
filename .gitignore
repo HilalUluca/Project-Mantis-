@@ -1,11 +1,61 @@
-# Önbellek ve geçici dosyalar (Görseldeki .cache/ için)
+# Global project ignores
 .cache/
 
-# Python derleme ve sanal ortam artıkları
+# Python
 venv/
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
 
-# IDE ve işletim sistemi ayarları
+# Virtual environments and local env files
+.env
+.env.*
+*.env
+
+# Database artifacts and local app data
+*.db
+*.sqlite
+*.sqlite3
+mantis.db
+mantis_memory.db
+backend/*.db
+backend/*.sqlite*
+backend/generated_documents/
+backend/watched_imports/
+backend/token.json
+backend/credentials.json
+backend/company_profile.json
+backend/users_db.json
+backend/watched_folders.json
+company_profile.json
+users_db.json
+corporate_brain.json
+
+# Node / frontend artifacts
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+.npm/
+
+# IDE and OS noise
 .vscode/
+.idea/
 .DS_Store
+Thumbs.db
+
+# Security / local-generated app files
+**/credentials.json
+**/token.json
+**/*.pem
+**/*.key
