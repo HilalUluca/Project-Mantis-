@@ -1,4 +1,5 @@
 # 🛡️ Project Mantis
+<img width="754" height="408" alt="image" src="https://github.com/user-attachments/assets/14f1030a-3b23-4eed-bdfa-99fec36bef33" />
 > **The Newest Mind on Your Team: Local & Always On**  
 > *Privacy-first, autonomous operations and legal compliance assistant designed for modern SMEs.*
 
@@ -8,7 +9,7 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Actionable_RAG_%7C_Harness-orange)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-<img width="754" height="408" alt="image" src="https://github.com/user-attachments/assets/14f1030a-3b23-4eed-bdfa-99fec36bef33" />
+
 ---
 
 ## 📌 Executive Summary & Problem Statement
